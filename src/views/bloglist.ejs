@@ -1,0 +1,40 @@
+<%- contentFor('body') %>
+
+<section class="bg-light pt-4 pb-5">
+  <div class="container">
+    <h1 class="text-center mb-5 mt-2">RECENTLY PUBLISHED</h1>
+
+    <div class="row justify-content-center">
+      <% if(list.length == 0) { %>
+      <h4 class="text-center">
+        There are no recent publishes for this category <br />
+        or it does not exist.
+      </h4>
+      <% } %> <% list.slice(0,3).forEach(function(blog){ %>
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="<%= blog.fields.header.fields.file.url %>"
+            alt="<%= blog.fields.title %>"
+            style="height: 220px; width: 350px"
+          />
+          <div class="card-body">
+            <h3><%= blog.fields.title %></h3>
+            <p><%= blog.fields.description %></p>
+            <a href="/blog/<%= blog.sys.id %>" class="btn btn-primary"
+              >Read</a
+            >
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+<section class="bg-dark">
+  <div class="container text-light">
+    <h1 class="text-center mb-5 pt-5">READ FROM YOUR FAVOURITES</h1>
+    <%- include("partials/categories", {categories: categories, type: type})%>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <% list.forEach(function(blog){%>
+      <div class="col-md-4 text-center">
+        <div class="card mx-2 my-3">
+          <img
+            class="card-img-top"
+            src="<%= blog.fields.header.fields.file.url %>"
+            alt=""
+          />
+
+          <div class="card-body text-left">
+            <h5 class="card-title"><%= blog.fields.title %></h5>
+            <p class="card-text"><%= blog.fields.description %></p>
+            <a href="/blog/<%= blog.sys.id %>" class="btn btn-primary float-right"
+              >Read</a
+            >
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

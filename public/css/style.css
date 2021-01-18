@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.navbar {
+  height: 60px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.reviews-container {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Paste your styles here */

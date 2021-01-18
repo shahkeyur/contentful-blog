@@ -1,0 +1,18 @@
+<div class="row text-center justify-content-center">
+  <% categories.forEach(function(category){ %>
+  <div class="col-4 p-4">
+    <div class="card mb-4">
+      <a href="/reviews/<%= type %>/<%= category.fields.title%>">
+        <img
+          class="card-img-top w-100"
+          src="<%=  category.fields.baner.fields.file.url %>"
+          alt="<%= category.fields.title %>"
+        />
+        <div class="card-body p-0 text-capitalize text-dark">
+          <h4><%= category.fields.title %></h4>
+        </div></a
+      >
+    </div>
+  </div>
+  <% }); %>
+</div>
